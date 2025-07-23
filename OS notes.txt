@@ -27,7 +27,7 @@ MAN                   # gives pages among pages of how to use commands
 2 > /dev/null         # removes all errors from command and shows you what ran successfully only
 >                     # overwrite output of commmand to file or other destination
 >>                    # appends output of commmand to file or other destination
-grep                  # grab regular expression
+grep  -v (not grep/exclude)                # grab regular expression
 |                     # tells to do something THEN do another (example: ls -lisa /etc | grep syslog)
 ;                     # has 
 *                     # anything or wildcard, fill in 
@@ -35,8 +35,25 @@ where                 # locates the binary to run command
 egrep                 # gives access to extended library past 
 -r                    # recursive
 awk                   # lets you reformat or select sections of text based on delimiters on the fly. awk is commonly used to create tabular data sets form comand output in bash.
+awk '{print}' <filename>    #prints all lines of file
+awk 'NR <=100' <filename>         #prints the first 100 lines
+awk 'NR <= 50 || NR >= 70' <filename>      #prints lines less than or equal to 50 and greater than or equal to 70
+awk 'NR >= 50 && NR <= 70' <filename>      #prints lines 50 through 70
+
+
+
 #XYZ additional notes for awk
+
+
+
 sed                   # very powerful tool can be used to replace items in 
+find / -type [file|d] <name of file or directory>             # this will search through the whole file system for something specific
+ls -l /location to search | grep '^d' | grep '\.d$' | wc -l # the ^ in regex is start of line looking for only directories, the $ is end of line looking for .d which the . is \ or escaped for literal . not wildcard . like regex
+valid and invalid ips : grep -E '^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$' file
+
+mac address that start with a 0 or even numbers for the first Byte are locally administered or globally administered
+
+
 
 FILE TYPES
 - regular file (text, binary)
@@ -49,10 +66,13 @@ s socket (allows communication between processes)
 
 
 HASHING:
-md5sum [filename]
-sha256sum [filename]
+$1$    md5sum [filename]
+$5$        sha256sum [filename]
+$6$        sha512sum [filename]
 for strings:
 echo -n "string" | sha512sum
+for hashed passwords
+
 
 MAN PAGES:
 man pages are stored @ /usr/share/man/man<section>/<command>.<Section>.gz
@@ -80,6 +100,8 @@ for
 if
 
 
+openssl enc -aes-128-cbc -d -in <file> -out <file>.txt -pass pass:"encryptionkeypassword"
+
 VARIBLES
 varibles all start with $ then the name, varible names must be XYZ
 example a="100"
@@ -91,8 +113,15 @@ $PATH                 #
 
 
 IMPORTANT FILES/DIRECTORIES
-/etc/passwd    #   7fields    username:passplaceholder:UID:GID: 
+/etc/passwd    #   7fields    username: password placeholder: UID: GID: comments: home directory: login shellg
 /etc                  # everything configurable 
+
+/etc/group            # group name: password placeholder (usually x): group ID: members of group
+
+
+
+
+
 
 FIREWALL RULES
 iptables -L            # list current firewall rules
@@ -110,6 +139,7 @@ SITES:
 SS64.com               # great for Linux commands and help 
 Baeldung.com
 REGEX101.com            # regular expression help
+openssl.org/docs/man1..1/man1/enc.html
 
 
 
