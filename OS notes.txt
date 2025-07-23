@@ -1,0 +1,95 @@
+Important notes:
+  XYZ is something i need to fill in later and havent yet
+  anything behind an octothorp # is a comment and not part of the command
+
+
+WINDOWS POWERSHELL
+
+
+
+
+
+
+
+
+Linux Notes *most of course* (CaSe SeNsItIvE)
+
+Basic commands:
+pwd                   # print working directory
+whoami                # current logged on user
+w                     # current logged in with more
+ctrl + l OR clear     # clears the screen
+netstat               # shows network connections to computer
+history               # shows previous commands
+sudo !!               # will run last command as sudo
+ls -l[isa]            # list out directories
+ls --help             # is gonna give basic options not a whole MAN page
+cat                   # concatenate, combines files also reads them
+MAN                   # gives pages among pages of how to use commands
+2 > /dev/null         # removes all errors from command and shows you what ran successfully only
+>                     # overwrite output of commmand to file or other destination
+>>                    # appends output of commmand to file or other destination
+grep                  # grab regular expression
+|                     # tells to do something THEN do another (example: ls -lisa /etc | grep syslog)
+;                     # has 
+*                     # anything or wildcard, fill in 
+where                 # locates the binary to run command
+egrep                 # gives access to extended library past 
+-r                    # recursive
+awk                   # lets you reformat or select sections of text based on delimiters on the fly. awk is commonly used to create tabular data sets form comand output in bash.
+#XYZ additional notes for awk
+sed                   # very powerful tool can be used to replace items in 
+
+
+Permissions:(Yugio)
+U - user/owner
+G - group
+O - others
+
+4 - read
+2 - write
+1 - execute
+777 - full -rwxrwxrwx
+
+
+LOOPS:
+while  
+
+for
+
+if
+
+
+VARIBLES
+varibles all start with $ then the name, varible names must be XYZ
+example a="100"
+echo $a
+result: 100
+
+$PATH                 # 
+
+
+
+IMPORTANT FILES/DIRECTORIES
+/etc/passwd    #   7fields    username:passplaceholder:UID:GID: 
+/etc                  # everything configurable 
+
+FIREWALL RULES
+iptables -L            # list current firewall rules
+
+
+
+RESOURCES:
+COMMANDS:
+--help                 # option for any command that will give a small page for it
+MAN                    # full manual page for each commands
+
+
+
+SITES:
+SS64.com               # great for Linux commands and help 
+Baeldung.com
+REGEX101.com            # regular expression help
+
+
+
