@@ -10,8 +10,6 @@ WINDOWS POWERSHELL
 
 
 
-
-
 Linux Notes *most of course* (CaSe SeNsItIvE)
 
 Basic commands:
@@ -40,6 +38,28 @@ awk                   # lets you reformat or select sections of text based on de
 #XYZ additional notes for awk
 sed                   # very powerful tool can be used to replace items in 
 
+FILE TYPES
+- regular file (text, binary)
+d directory (folder)
+l symbolic link (pointer to another file)
+c character device (raw input devices like keyboard, mouse)
+b block device (storage device like hard disk)
+p named pipe (specific ipc files)
+s socket (allows communication between processes)
+
+
+HASHING:
+md5sum [filename]
+sha256sum [filename]
+for strings:
+echo -n "string" | sha512sum
+
+MAN PAGES:
+man pages are stored @ /usr/share/man/man<section>/<command>.<Section>.gz
+example: /usr/share/man/man1/cat.1.gz
+man -w cat             # to find where a man page is for a command in the file system, so this gives the path of the man page for the command "cat" 
+result: /usr/share/man/man1/cat.1.gz
+man -k digest          # gives all hashes availible for 
 
 Permissions:(Yugio)
 U - user/owner
