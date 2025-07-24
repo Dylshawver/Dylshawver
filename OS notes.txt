@@ -41,6 +41,9 @@ awk 'NR <= 50 || NR >= 70' <filename>      #prints lines less than or equal to 5
 awk 'NR >= 50 && NR <= 70' <filename>      #prints lines 50 through 70
 
 
+awk -F: '/^groupname:/ { print $4 }' /etc/group    # the -F: tells awk to seperate fields with a : and the $4 is saying the 4th field so print $4 is saying to print the 4th field found by the colons
+tr ',' '\n'    #translates the commas to new lines
+sort <filename>  #sorts each line
 
 #XYZ additional notes for awk
 
