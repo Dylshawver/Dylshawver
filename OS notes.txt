@@ -39,6 +39,8 @@ awk '{print}' <filename>    #prints all lines of file
 awk 'NR <=100' <filename>         #prints the first 100 lines
 awk 'NR <= 50 || NR >= 70' <filename>      #prints lines less than or equal to 50 and greater than or equal to 70
 awk 'NR >= 50 && NR <= 70' <filename>      #prints lines 50 through 70
+# $1 is first column
+awk -F "," '{print $1" : "$2}' | sort #sorts the file and seperates the colulm
 
 
 awk -F: '/^groupname:/ { print $4 }' /etc/group    # the -F: tells awk to seperate fields with a : and the $4 is saying the 4th field so print $4 is saying to print the 4th field found by the colons
